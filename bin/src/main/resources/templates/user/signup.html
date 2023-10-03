@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>signup</title>
+</head>
+<body>
+	<h1>新規ユーザー登録</h1>
+	<form th:action="@{/user/signup}" th:object="${SignupForm}" th:method="post">
+		<label>名前</label>
+		<input type="text" th:field="*{name}">
+		<label>メールアドレス</label>
+		<input type="text" th:field="*{mail}">
+		<label>パスワード</label>
+		<input type="text" th:field="*{password}">
+		<br />
+		<input type="submit" value="登録">
+        <a href="/user/login">キャンセル</a>
+    </form>
+</body>
+</html>

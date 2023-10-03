@@ -6,6 +6,19 @@
 </head>
 <body>
 	<p1>Home</p1>
-
+	<table>
+		<thead>
+			<tr>
+				<th>名前</th>
+				<th>作者</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}" th:object="${book}">
+				<td th:text="${book.name}">タイトル</td>
+				<td th:text="${book.author}">作者</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

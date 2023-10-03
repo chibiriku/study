@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>signup</title>
+</head>
+<body>
+	<h1>本の登録</h1>
+	<form th:action="@{/book/add}" th:object="${BookAddForm}" th:method="post">
+		<label>題名</label>
+		<input type="text" th:field="*{name}">
+		<label>作者</label>
+		<input type="text" th:field="*{author}">
+		<label>あらすじ</label>
+		<input type="text" th:field="*{synopsis}">
+		<br />
+		<input type="submit" value="登録">
+        <a href="/book/list">キャンセル</a>
+    </form>
+</body>
+</html>
